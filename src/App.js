@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ClientLogin from "./Clients/Pages/Login";
 import ClientSignup from "./Clients/Pages/Signup";
 import Employer from "./Employer/Component/Navbar";
-import CIndex from "./Clients/index";
-import EIndex from "./Employer/index"
+import CIndex from "./Clients";
+import EIndex from "./Employer"
 
 
 

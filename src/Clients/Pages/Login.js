@@ -1,10 +1,12 @@
 import React from 'react';
+import LoginModal from "../Component/Modal/LoginModal"
 
 const Login = () => {
     return (
-        <div>
-            Client Login
-        </div>
+
+        <>
+            {/* <LoginModal /> */}
+        </>
     );
 }
 

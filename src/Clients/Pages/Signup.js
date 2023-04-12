@@ -1,9 +1,10 @@
 import React from 'react';
+import SignupModal from '../Component/Modal/SignupModal';
 
 const Signup = () => {
     return (
         <div>
-            Client Signup
+            {/* <SignupModal /> */}
         </div>
     );
 }
