@@ -11,7 +11,8 @@ import { Link } from 'react-router-dom';
 
 
 
-const Navbar = () => {
+const Navbar = ({ search_term, setSearchTerm }) => {
+
     return (
 
 
@@ -48,8 +49,8 @@ const Navbar = () => {
                     </ul>
                     <div className="col-md-4 search">
                         <form className="d-flex search-bar" role="search">
-                            <input className="input search-input  " type="search" placeholder="Search" aria-label="Search" />
-                            <button className=" searchbtn " type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
+                            <input className="input search-input  " type="search" placeholder="Search" aria-label="Search" value={search_term} onChange={(e) => setSearchTerm(e.target.value)} />
+                            <button className=" searchbtn " type="submit" ><i className="fa fa-search" aria-hidden="true"></i></button>
                         </form>
                     </div>
                     <ul className="navbar-nav ">

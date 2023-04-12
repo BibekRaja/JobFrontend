@@ -2,19 +2,21 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Jobcards from '../../Component/Jobcards';
 
-const Home = () => {
+const Home = ({ search_term }) => {
     const [Jobs, setJobs] = useState([]);
     const [isLoading, setisLoading] = useState(true);
 
+    // const [search_term, setSearchTerm] = useState("");
+
     useEffect(() => {
-        axios.get("https://job-api-eosin.vercel.app/api/jobs").then(res => {
+        axios.get(` ${process.env.REACT_APP_SERVER_DOMAIN}jobs?search_term=${search_term}`).then(res => {
             console.log(res);
             setisLoading(false)
             setJobs(res.data.data)
         }).catch(err => {
 
         })
-    }, []);
+    }, [search_term]);
 
 
     return (
@@ -25,6 +27,7 @@ const Home = () => {
                 <h1>Loading....</h1>
 
             }
+            {/* <input value={search_term} onChange={(e) => { setSearchTerm(e.target.value) }} /> */}
             {
                 Jobs.map(job => {
                     return <Jobcards job={job} />
